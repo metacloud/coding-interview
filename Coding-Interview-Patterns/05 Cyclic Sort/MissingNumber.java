@@ -26,7 +26,11 @@ class MissingNumber {
           return i;
       }
       return nums.length;
-  }
+  }/*
+  Time Complexity: O(N)
+  Space Complexity: O(1)
+  */
+
 
   //swap function
   private static void swap(int[] arr, int i, int j) {
@@ -42,7 +46,11 @@ class MissingNumber {
       total = total - nums[i];
     }
     return total;
-  }
+  }/*
+  Time Complexity: O(N)
+  Space Complexity: O(1)
+  */
+
 
   public static int findMissingNumber_XOR(int[] nums){
     int ret = 0;
@@ -54,7 +62,11 @@ class MissingNumber {
       ret = ret^nums[i];
     }
     return ret;
-  }
+  }/*
+  Time Complexity: O(N)
+  Space Complexity: O(1)
+  */
+  
 
   public static void main(String[] args) {
     System.out.println(MissingNumber.findMissingNumber(new int[] { 4, 0, 3, 1 }));
