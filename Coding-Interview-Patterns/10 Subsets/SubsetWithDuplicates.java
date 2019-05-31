@@ -36,7 +36,10 @@ class SubsetWithDuplicates {
       }
     }
     return subsets;
-  }
+  }/*
+  Time Complexity: O(2^N)
+  Space Complexity: O(2^N)
+  */
 
   public static void main(String[] args){
     List<List<Integer>> result = SubsetWithDuplicates.findSubsets(new int[] { 1, 3, 3 });
