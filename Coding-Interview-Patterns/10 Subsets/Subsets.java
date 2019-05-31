@@ -3,6 +3,11 @@ Pattern: Subsets
 01 Subsets (easy)
 
 Given a set with distinct elements, find all of its distinct subsets.
+
+# LeetCode 78. Subsets [Medium]
+[Result]
+Runtime: 0 ms, faster than 100.00% of Java online submissions for Subsets.
+Memory Usage: 36.6 MB, less than 98.93% of Java online submissions for Subsets.
 */
 
 
