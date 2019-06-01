@@ -5,12 +5,19 @@ Pattern: Sliding Window
 Given an array of positive numbers and a positive number ‘S’,
 find the length of the smallest subarray whose sum is greater than or equal to ‘S’.
 Return 0, if no such subarray exists.
+
+# LeetCode 209. Minimum Size Subarray Sum [Medium]
+[Result]
+Runtime: 1 ms, faster than 99.97% of Java online submissions for Minimum Size Subarray Sum.
+Memory Usage: 35.6 MB, less than 99.92% of Java online submissions for Minimum Size Subarray Sum.
 */
 
-
+// Dont forget to check Base & Edge Cases!
 class MinSizeSubArraySum {
   public static int findMinSubArray(int S, int[] arr) {
-    int minLen = arr.length-1, Len = 0;
+    if(arr.length==0) return 0;
+
+    int minLen = Integer.MAX_VALUE, Len = 0;
     int startSub = 0, endSub = 0;
     int sum = 0;
 
@@ -27,6 +34,8 @@ class MinSizeSubArraySum {
             startSub++;
         }
     }
+    // Sum of all elements < S; (= No subarray >= S)
+    if(minLen == Integer.MAX_VALUE) return 0;
     return minLen;
   }
 
@@ -40,6 +49,6 @@ class MinSizeSubArraySum {
   }
 }
 /*
-Time Complexity: O(N+N) For Loop + Inner While Loop ~= O(N)
+Time Complexity: O(N)
 Space Complexity: O(1)
 */
