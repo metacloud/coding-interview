@@ -5,19 +5,26 @@ Pattern: Two Pointers
 Given an array of sorted numbers, remove all duplicates from it.
 You should not use any extra space; after removing the duplicates in-place
 return the new length of the array.
+
+# LeetCode 26. Remove Duplicates from Sorted Array [Easy]
+[Result]
+Runtime: 1 ms, faster than 99.75% of Java online submissions for Remove Duplicates from Sorted Array.
+Memory Usage: 38.8 MB, less than 99.87% of Java online submissions for Remove Duplicates from Sorted Array.
 */
 
 
 class RemoveDuplicates {
   public static int remove(int[] arr){
-    int nonDuplicateNext = 1;
-    for(int i=1; i<arr.length; i++){
-      if(arr[nonDuplicateNext-1] != arr[i]){
-        arr[nonDuplicateNext] = arr[i];
-        nonDuplicateNext++;
+    if(arr.length==0) return 0;
+
+    int current = 0; // length of nonDuplicate array.
+    for(int check=1; check < arr.length; check++){
+      if(arr[current] != arr[check]){
+        current++;
+        arr[current] = arr[check];
       }
     }
-    return nonDuplicateNext;
+    return current+1;
   } /*
   Time Complexity: O(N)
   Space Complexity: O(1)
