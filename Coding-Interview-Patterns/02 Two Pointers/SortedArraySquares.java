@@ -5,9 +5,30 @@ Pattern: Two Pointers
 Given a sorted array,
 create a new array containing squares of all the number of the input array
 in the sorted order.
+
+# LeetCode 977. Squares of a Sorted Array
+[Result]
+Runtime: 2 ms, faster than 84.21% of Java online submissions for Squares of a Sorted Array.
+Memory Usage: 41 MB, less than 96.70% of Java online submissions for Squares of a Sorted Array.
 */
 
+import java.util.Arrays;
+
 class SortedArraySquares {
+
+  //Intuition
+  public static int[] sortedSquares(int[] arr){
+    int[] squares = new int[arr.length];
+    for(int i=0; i<arr.length; i++){
+      squares[i] = arr[i]*arr[i];
+    }
+    Arrays.sort(squares);
+    return squares;
+  }/*
+  Time Complexity: O(NlogN)
+  Space Complexity: O(N)
+  */
+
 
   public static int[] makeSquares(int[] arr) {
     int[] squares = new int[arr.length];
@@ -47,7 +68,18 @@ class SortedArraySquares {
 
   public static void main(String[] args) {
 
-    int[] result = SortedArraySquares.makeSquares(new int[] { -2, -1, 0, 2, 3 });
+    int[] result = SortedArraySquares.sortedSquares(new int[] { -2, -1, 0, 2, 3 });
+    for (int num : result)
+      System.out.print(num + " ");
+    System.out.println();
+
+    result = SortedArraySquares.makeSquares(new int[] { -2, -1, 0, 2, 3 });
+    for (int num : result)
+      System.out.print(num + " ");
+    System.out.println();
+
+
+    result = SortedArraySquares.sortedSquares(new int[] { -3, -1, 0, 1, 2 });
     for (int num : result)
       System.out.print(num + " ");
     System.out.println();
