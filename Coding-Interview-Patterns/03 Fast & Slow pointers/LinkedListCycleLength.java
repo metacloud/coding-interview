@@ -40,7 +40,10 @@ class LinkedListCycleLength{
           curr = curr.next;
         }
         return lenCycle;
-    }
+    }/*
+    Time Complexity: O(N)
+    Space Complexity: O(1)
+    */
 
     public static void main(String[] args) {
       ListNode head = new ListNode(1);
