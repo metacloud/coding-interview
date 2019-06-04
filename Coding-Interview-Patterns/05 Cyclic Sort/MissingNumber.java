@@ -5,8 +5,11 @@ Pattern: Cyclic Sort
 
 We are given an array containing ‘n’ distinct numbers taken from the range 0 to ‘n’.
 Since the array has only ‘n’ numbers out of the total ‘n+1’ numbers, find the missing number.
-*/
 
+# LeetCode 268. Missing Number [Easy]
+[Result]
+SUM >= XOR >= Cyclic Sort
+*/
 
 class MissingNumber {
 
@@ -14,12 +17,15 @@ class MissingNumber {
   public static int findMissingNumber(int[] nums) {
       int i=0;
       while(i < nums.length){
-        if(nums[i] < nums.length && nums[i] != nums[nums[i]]){
-          swap(nums, i, nums[i]);
+        if(nums[i] < nums.length && i != nums[i]){
+          int correctIndex = nums[i];
+          int temp = nums[i];
+          nums[i] = nums[correctIndex];
+          nums[correctIndex] = temp;
         } else {
           i++;
         }
-      } //Sorting
+      }
 
       for(i=0; i<nums.length; i++){
         if(nums[i] != i)
@@ -30,14 +36,6 @@ class MissingNumber {
   Time Complexity: O(N)
   Space Complexity: O(1)
   */
-
-
-  //swap function
-  private static void swap(int[] arr, int i, int j) {
-    int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-  }
 
   public static int findMissingNumber_SUM(int[] nums){
     int n = nums.length;
@@ -66,7 +64,7 @@ class MissingNumber {
   Time Complexity: O(N)
   Space Complexity: O(1)
   */
-  
+
 
   public static void main(String[] args) {
     System.out.println(MissingNumber.findMissingNumber(new int[] { 4, 0, 3, 1 }));
