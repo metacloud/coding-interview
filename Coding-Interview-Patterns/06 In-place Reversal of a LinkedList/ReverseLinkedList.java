@@ -5,6 +5,11 @@ Pattern: In-place Reversal of a LinkedList
 
 Given the head of a Singly LinkedList,
 reverse the LinkedList. Write a function to return the new head of the reversed LinkedList.
+
+# LeetCode 206. Reverse Linked List [Easy]
+[Result]
+Runtime: 0 ms, faster than 100.00% of Java online submissions for Reverse Linked List.
+Memory Usage: 37.2 MB, less than 99.77% of Java online submissions for Reverse Linked List.
 */
 
 
