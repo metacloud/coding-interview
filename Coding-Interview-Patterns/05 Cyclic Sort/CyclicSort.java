@@ -29,6 +29,20 @@ class CyclicSort {
   Space Complexity: O(1)
   */
 
+  public static void sort2(int[] nums){
+      int i=0;
+      while(i<nums.length){
+        int correctIndex = nums[i]-1;
+        if(i==correctIndex){
+          i++;
+        } else {
+          int temp = nums[i];
+          nums[i] = nums[correctIndex];
+          nums[correctIndex] = temp;
+        }
+      }
+  }
+
   public static void main(String[] args) {
     int[] arr = new int[] { 3, 1, 5, 4, 2 };
     CyclicSort.sort(arr);
