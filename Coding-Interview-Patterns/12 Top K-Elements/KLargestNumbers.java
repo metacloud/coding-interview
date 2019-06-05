@@ -12,6 +12,10 @@ Example 2: Input: [5, 12, 11, -1, 12], K = 3
 */
 
 import java.util.*;
+/*
+Brute force Solution: sorting the array and then return the largest K numbers.
+Time Complexity: O(NlogN)
+*/
 
 class KLargestNumbers {
   public static List<Integer> findKLargestNumbers(int[] nums, int k){
