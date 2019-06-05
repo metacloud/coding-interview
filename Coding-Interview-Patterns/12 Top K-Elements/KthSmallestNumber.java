@@ -35,6 +35,16 @@ class KthSmallestNumber {
       Space Complexity: O(K)
       */
 
+      /*
+      Alternate Solution : we can use a Min Heap to find the Kth smallest number.
+      we are able to insert all the numbers in the min-heap, then get the top 'K' Numbers
+      from the heap to find the Kth smallest number.
+      -Inserting all numbers in the heap : O(N)
+      -Extracting 'K' numbers : O(KlogN)
+      : Time Complexity: O(N+KlogN)
+      : Space Complexity: O(N)
+      */
+
       public static void main(String[] args) {
       int result = KthSmallestNumber.findKthSmallestNumber(new int[] { 1, 5, 12, 2, 11, 5 }, 3);
       System.out.println("Kth smallest number is: " + result);
