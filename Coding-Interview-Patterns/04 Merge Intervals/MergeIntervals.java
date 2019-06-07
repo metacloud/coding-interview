@@ -5,6 +5,10 @@ Pattern: Merge Intervals
 
 Given a list of intervals,
 merge all the overlapping intervals to produce a list that has only mutually exclusive intervals.
+
+# LeetCode 56. Merge Intervals [Medium]
+[Result]
+
 */
 
 
@@ -23,6 +27,7 @@ class Interval {
 class MergeIntervals {
 
     public static List<Interval> merge(List<Interval> intervals){
+        //sort all the intervals on the start time to ensure a.start <= b.start
         Collections.sort(intervals, (a, b)->Integer.compare(a.start, b.start));
 
         LinkedList<Interval> mergedIntervals = new LinkedList<Interval>();
@@ -34,7 +39,10 @@ class MergeIntervals {
             }
         }
         return mergedIntervals;
-    }
+    }/*
+    Time Complexity: O(NlogN)
+    Space Complexity: O(N)
+    */
 
     public static void main(String[] args) {
 
