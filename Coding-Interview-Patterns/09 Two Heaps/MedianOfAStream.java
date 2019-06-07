@@ -8,6 +8,11 @@ The class should have the following two methods:
 1. insertNum(int num): stores the number in the class
 2. findMedian(): returns the median of all numbers inserted in the class
 If the count of numbers inserted in the class is even, the median will be the average of the middle two numbers.
+
+# LeetCode 295. Find Median from Data Stream [Hard]
+[Result]
+Runtime: 106 ms, faster than 92.79% of Java online submissions for Find Median from Data Stream.
+Memory Usage: 63.7 MB, less than 79.19% of Java online submissions for Find Median from Data Stream.
 */
 
 
