@@ -96,21 +96,21 @@ class Solution {
 
       for(int i=0; i<intervals.length; i++){
           if(i+1>= intervals.length){
-            int m[] = {startpoint, endpoint};
+            int[] m = {startpoint, endpoint};
             mergedList.add(m);
           }
           else if(intervals[i+1][0] <= endpoint){
               endpoint = Math.max(intervals[i+1][1], endpoint);
           }
           else { //No overlapping part
-              int m[] = {startpoint, endpoint};
+              int[] m = {startpoint, endpoint};
               mergedList.add(m);
               //update
               startpoint = intervals[i+1][0];
               endpoint = intervals[i+1][1];
           }
       }
-      int mergedIntervals [][] = new int[mergedList.size()][];
+      int[][] mergedIntervals = new int[mergedList.size()][];
       return mergedList.toArray(mergedIntervals);
   }
 }
