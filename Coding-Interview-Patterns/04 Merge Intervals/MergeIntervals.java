@@ -8,7 +8,8 @@ merge all the overlapping intervals to produce a list that has only mutually exc
 
 # LeetCode 56. Merge Intervals [Medium]
 [Result]
-
+Runtime: 6 ms, faster than 91.52% of Java online submissions for Merge Intervals.
+Memory Usage: 37.5 MB, less than 99.35% of Java online submissions for Merge Intervals.
 */
 
 
@@ -73,4 +74,43 @@ class MergeIntervals {
           System.out.print("[" + interval.start + "," + interval.end + "] ");
         System.out.println();
     }
+}
+
+
+//LeetCode : Input type "2D Arrays"
+
+class Solution {
+  public int[][] merge(int[][] intervals) {
+      if(intervals.length==0) return intervals;
+
+      List<int []> mergedList = new ArrayList<>();
+      Arrays.sort(intervals, new Comparator<int[]>(){
+        @Override
+        public int compare(int[] a, int[] b){
+          return Integer.compare(a[0],b[0]);
+        }
+      });
+
+      int startpoint = intervals[0][0];
+      int endpoint = intervals[0][1];
+
+      for(int i=0; i<intervals.length; i++){
+          if(i+1>= intervals.length){
+            int m[] = {startpoint, endpoint};
+            mergedList.add(m);
+          }
+          else if(intervals[i+1][0] <= endpoint){
+              endpoint = Math.max(intervals[i+1][1], endpoint);
+          }
+          else { //No overlapping part
+              int m[] = {startpoint, endpoint};
+              mergedList.add(m);
+              //update
+              startpoint = intervals[i+1][0];
+              endpoint = intervals[i+1][1];
+          }
+      }
+      int mergedIntervals [][] = new int[mergedList.size()][];
+      return mergedList.toArray(mergedIntervals);
+  }
 }
