@@ -11,9 +11,10 @@ Input: Intervals=[[1,3], [5,7], [8,12]], New Interval=[4,6]
 Output: [[1,3], [4,7], [8,12]]
 Explanation: After insertion, since [4,6] overlaps with [5,7], we merged them into one [4,7].
 
-# LeetCode 57 Insert Interval
+# LeetCode 57 Insert Interval [Hard]
 [Result]
-
+Runtime: 1 ms, faster than 99.86% of Java online submissions for Insert Interval.
+Memory Usage: 41 MB, less than 41.90% of Java online submissions for Insert Interval.
 */
 
 import java.util.*;
@@ -32,35 +33,32 @@ class Interval {
 class InsertInterval {
 
   public static List<Interval> insert(List<Interval> intervals, Interval newInterval){
-    int lastIndex= 0;
+
     List<Interval> mergedIntervals = new ArrayList<>();
+    boolean added = false;
 
-    for(int i=0; i<intervals.size(); i++){
-      if(intervals.get(i).end < newInterval.start){
-          mergedIntervals.add(intervals.get(i));
-      }
-      else if(newInterval.start >= intervals.get(i).start && newInterval.start <= intervals.get(i).end){
-        newInterval.start = Math.min(newInterval.start, intervals.get(i).start);
-        newInterval.end = Math.max(newInterval.end, intervals.get(i).end);
-      }
-      else if(newInterval.start < intervals.get(i).start && intervals.get(i).start <= newInterval.end ){
-        newInterval.start = Math.min(newInterval.start, intervals.get(i).start);
-        newInterval.end = Math.max(newInterval.end, intervals.get(i).end);
-      }
-      else if(newInterval.end < intervals.get(i).start ){
-        lastIndex = i;
-        break;
-      }
+    for(Interval interval : intervals){
+        if(interval.end < newInterval.start){
+          mergedIntervals.add(interval);
+        }
+        else if(newInterval.end < interval.start){
+          if(!added){
+            mergedIntervals.add(newInterval);
+            added = true;
+          }
+          mergedIntervals.add(interval);
+        }
+        else { //overlapping
+          newInterval.start = Math.min(interval.start, newInterval.start);
+          newInterval.end = Math.max(interval.end, newInterval.end);
+        }
     }
 
-    mergedIntervals.add(newInterval);
-
-    if(lastIndex==0) return mergedIntervals;
-    for(int i=lastIndex; i<intervals.size(); i++){
-      mergedIntervals.add(intervals.get(i));
+    if(!added){
+      mergedIntervals.add(newInterval);
     }
-
     return mergedIntervals;
+
   }/*
   Time Complexity: O(N)
   Space Complexity: O(N)
@@ -95,4 +93,36 @@ class InsertInterval {
         System.out.print("[" + interval.start + "," + interval.end + "] ");
       System.out.println();
   }
+}
+
+
+
+//LeetCode : Input type "2D Arrays"
+
+class Solution {
+    public int[][] insert(int[][] intervals, int[] newInterval){
+        List<int[]> mergedIntervals = new ArrayList<>();
+        boolean added = false;
+        for(int[] interval : intervals){
+
+          if(interval[1] < newInterval[0]){//interval.end < newInterval.start
+            mergedIntervals.add(interval);
+          }
+          else if(interval[0] > newInterval[1]){//newInterval.end < interval.start
+            if(!added){
+              mergedIntervals.add(newInterval);
+              added = true;
+            }
+            mergedIntervals.add(interval);
+          }
+          else{
+              newInterval[0] = Math.min(interval[0], newInterval[0]);
+              newInterval[1] = Math.max(interval[1], newInterval[1]);
+          }
+        }
+        if(!added){//only if newInterval is last
+          mergedIntervals.add(newInterval);
+        }
+        return mergedIntervals.toArray(new int[mergedIntervals.size()][]);
+    }
 }
