@@ -6,6 +6,11 @@ Pattern: Tree BFS
 Given a binary tree, populate an array to represent its level-by-level traversal in reverse order,
 i.e., the lowest level comes first.
 You should populate the values of all nodes in each level from left to right in separate sub-arrays.
+
+# LeetCode 107. Binary Tree Level Order Traversal II [Easy]
+[Result]
+Runtime: 1 ms, faster than 89.86% of Java online submissions for Binary Tree Level Order Traversal II.
+Memory Usage: 36.6 MB, less than 99.96% of Java online submissions for Binary Tree Level Order Traversal II.
 */
 
 
@@ -46,7 +51,6 @@ class ReverseLevelOrderTraversal{
         }
         result.add(0, currentLevel);
       }
-
       return result;
   }/*
   Time Complexity: O(N)
