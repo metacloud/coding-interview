@@ -6,6 +6,11 @@ Given a sorted array of numbers, find if a given number ‘key’ is present in 
 Though we know that the array is sorted, we don’t know if it’s sorted in ascending or descending order.
 You should assume that the array can have duplicates.
 Write a function to return the index of the ‘key’ if it is present in the array, otherwise return -1.
+
+# LeetCode 704. Binary Search [Easy]
+[Result]
+Runtime: 0 ms, faster than 100.00% of Java online submissions for Binary Search.
+Memory Usage: 39.4 MB, less than 94.49% of Java online submissions for Binary Search.
 */
 
 
