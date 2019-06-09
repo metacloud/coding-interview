@@ -42,7 +42,10 @@ class LevelAverage {
       result.add(levelSum/levelSize);
     }
     return result;
-  }
+  }/*
+  Time Complexity: O(N) where N is the total number of nodes in the tree.
+  Space Complexity: O(N) which is required for the queue.
+  */
 
   public static void main(String[] args) {
     TreeNode root = new TreeNode(12);
