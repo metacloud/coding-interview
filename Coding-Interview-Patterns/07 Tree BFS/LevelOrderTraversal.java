@@ -5,6 +5,11 @@ Pattern: Tree BFS
 
 Given a binary tree, populate an array to represent its level-by-level traversal.
 You should populate the values of all nodes of each level from left to right in separate sub-arrays.
+
+# LeetCode 102. Binary Tree Level Order Traversal [Medium]
+[Result]
+Runtime: 1 ms, faster than 76.80% of Java online submissions for Binary Tree Level Order Traversal.
+Memory Usage: 36.3 MB, less than 99.98% of Java online submissions for Binary Tree Level Order Traversal.
 */
 
 
