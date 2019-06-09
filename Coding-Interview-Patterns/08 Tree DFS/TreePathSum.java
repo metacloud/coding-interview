@@ -6,6 +6,11 @@ Pattern: Tree DFS
 
 Given a binary tree and a number ‘S’,
 find if the tree has a path from root-to-leaf such that the sum of all the node values of that path equals ‘S’.
+
+# LeetCode 112. Path Sum [Easy]
+[Result]
+Runtime: 0 ms, faster than 100.00% of Java online submissions for Path Sum.
+Memory Usage: 37.4 MB, less than 98.84% of Java online submissions for Path Sum.
 */
 
 
