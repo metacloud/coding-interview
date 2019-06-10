@@ -46,7 +46,10 @@ class FindAllTreePaths {
           recursiveTraversal(root.right, allPaths, currentPath, sum-root.val);
       }
       currentPath.remove(currentPath.size()-1);
-  }
+  }/*
+  Time Complexity: O(N^2) => O(N*logN) if the tree is balanced
+  Space Complexity: O(N^2) => O(N*logN) if the tree is balanced
+  */
 
   public static void main(String[] args) {
     TreeNode root = new TreeNode(12);
