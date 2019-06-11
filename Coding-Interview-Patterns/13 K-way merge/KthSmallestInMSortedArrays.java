@@ -47,7 +47,10 @@ class KthSmallestInMSortedArrays {
         }
     }
     return result;
-  }
+  }/*
+  Time Complexity: O(K*logM) where M is the total number of the input array.
+  Space Complexity: O(M)
+  */
 
 
   public static void main(String[] args) {
