@@ -17,7 +17,7 @@ class MissingNumber {
   public static int findMissingNumber(int[] nums) {
       int i=0;
       while(i < nums.length){
-        if(nums[i] < nums.length && i != nums[i]){
+        if(nums[i] < nums.length && nums[i] != nums[nums[i]]){
           int correctIndex = nums[i];
           int temp = nums[i];
           nums[i] = nums[correctIndex];
