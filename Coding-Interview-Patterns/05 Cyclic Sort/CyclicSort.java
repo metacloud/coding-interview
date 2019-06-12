@@ -12,28 +12,13 @@ For simplicity, let’s assume we are passed an integer array containing only th
 though each number is actually an object.
 */
 
-
 class CyclicSort {
 
-  public static void sort(int[] nums) {
-    for(int i = 0; i < nums.length; i++){
-      if(i != nums[i]-1){ //3 2 1
-        int correctIndex = nums[i]-1;
-        int temp = nums[i];
-        nums[i] = nums[correctIndex];
-        nums[correctIndex] = temp;
-      }
-    }
-  }/*
-  Time Complexity: O(N)
-  Space Complexity: O(1)
-  */
-
-  public static void sort2(int[] nums){
+  public static void sort(int[] nums){
       int i=0;
       while(i<nums.length){
         int correctIndex = nums[i]-1;
-        if(i==correctIndex){
+        if(nums[i]==nums[correctIndex]){
           i++;
         } else {
           int temp = nums[i];
@@ -41,7 +26,10 @@ class CyclicSort {
           nums[correctIndex] = temp;
         }
       }
-  }
+  }/*
+  Time Complexity: O(N)
+  Space Complexity: O(1)
+  */
 
   public static void main(String[] args) {
     int[] arr = new int[] { 3, 1, 5, 4, 2 };
