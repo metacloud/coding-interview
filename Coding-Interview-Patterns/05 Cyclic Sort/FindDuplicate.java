@@ -39,7 +39,10 @@ class FindDuplicate {
       }
     }
     return -1;
-  }
+  }/*
+  Time Complexity: O(n)
+  Space Complexity: O(1)
+  */
 
   public static void main(String[] args){
     System.out.println(FindDuplicate.findNumber(new int[] { 1, 4, 4, 3, 2 }));
