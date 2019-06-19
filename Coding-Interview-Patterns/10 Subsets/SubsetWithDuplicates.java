@@ -37,7 +37,9 @@ class SubsetWithDuplicates {
     return subsets;
   }/*
   Time Complexity: O(2^N)
+  ; Since, in each step, the number of subsets could double (if not duplicate) as we add each element to all the existing subsets
   Space Complexity: O(2^N)
+  ; for output list
   */
 
   public static void main(String[] args){
