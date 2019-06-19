@@ -30,7 +30,11 @@ class Subsets {
     return subsets;
   }/*
   Time Complexity: O(2^N)
+  ; since each step, the number of subsets doubles as we add each element to all
+  the existing subsets.
+
   Space Complexity: O(2^N)
+  ; all the additional space used is for the output list.
   */
 
   public static void main(String[] args) {
