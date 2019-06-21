@@ -44,7 +44,13 @@ class FrequencySort {
     }
 
     return sortedStr.toString();
-  }
+  }/*
+  Time Complexity: O(K*logK) where K is the number of distinct characters in the input string.
+  In the worst case, when all characters are unique the time Complexity of the algorithm will be
+  O(N*logN) where N is the total number of characters in the string.
+
+  Space Complexity: O(N)
+  */
 
   public static void main(String[] args) {
     String result = FrequencySort.sortCharacterByFrequency("Programming");
