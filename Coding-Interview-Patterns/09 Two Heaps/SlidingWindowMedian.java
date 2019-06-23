@@ -15,6 +15,8 @@ Explanation: Lets consider all windows of size ‘2’:
 
 # LeetCode 480. Sliding Window Median [Hard]
 [Result]
+Runtime: 28 ms, faster than 63.10% of Java online submissions for Sliding Window Median.
+Memory Usage: 40.6 MB, less than 88.34% of Java online submissions for Sliding Window Median.
 
 */
 
@@ -59,7 +61,16 @@ class SlidingWindowMedian {
       }
     }
     return result;
-  }
+  }/*
+  Time Complexity: The time Complexity of our algorithm is O(N*K) where N is the total number of elements
+  in the input array and 'K' is the size of the sliding window.
+  This is due to the fact that we are going through all the N numbers and,
+  while doing so, we are doing two things.
+    1. Inserting / removing numbers from heaps of size 'K'. This will take O(logK)
+    2. Removing the element going out of the sliding window. This will take O(K) as we will be searching
+    this element in an array of size 'K'
+  Space Complexity: O(K)
+  */
 
 
   private void rebalanceHeaps() {
