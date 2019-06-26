@@ -28,15 +28,16 @@ class ReverseSubList {
 
         ListNode current = head;
         ListNode previous = null;
-        for(int i=0; current != null && i <p-1; i++){
+        for(int i=0; current != null && i < p-1; i++){
           previous = current;
           current = current.next;
         }
 
         //first part before index 'p'
-        ListNode leftSubList = previous;
+        ListNode beforeReversed = previous;
+
         //second part between index 'p' and index 'q'
-        ListNode SubList = current;
+        ListNode reversedPart = current;
         for(int i=0; current != null && i<q-p+1; i++){
             ListNode temp = current.next;
             current.next = previous;
@@ -45,14 +46,14 @@ class ReverseSubList {
         }
 
         // get correct position with the first part
-        if(leftSubList != null){
-            leftSubList.next = previous;
-        } else{
+        if(beforeReversed != null){ // p != 0
+            beforeReversed.next = previous;
+        } else{ // p==0
             head = previous;
         }
 
         // connect with the last part
-        SubList.next = current;
+        reversedPart.next = current;
 
         return head;
     }/*
