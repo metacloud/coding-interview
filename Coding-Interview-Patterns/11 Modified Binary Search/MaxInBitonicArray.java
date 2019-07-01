@@ -32,7 +32,10 @@ class MaxInBitonicArray {
       }
     }
     return arr[start];
-  }
+  }/*
+  Time Complexity: O(logN); since we are reducing the search range by half at every step.
+  Space Complexity: O(1)
+  */
 
   public static void main(String[] args) {
     System.out.println(MaxInBitonicArray.findMax(new int[] { 1, 3, 8, 12, 4, 2 }));
