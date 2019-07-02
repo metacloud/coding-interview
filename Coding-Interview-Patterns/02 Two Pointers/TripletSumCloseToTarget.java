@@ -26,7 +26,6 @@ class TripletSumCloseToTarget {
       int x = i+1, y = arr.length-1;
 
       while(x < y){
-
         int currDiff = targetSum - arr[i] - arr[x] - arr[y];
         if(currDiff == 0){
           return targetSum - currDiff;
@@ -44,7 +43,7 @@ class TripletSumCloseToTarget {
     }
     return targetSum - smallestDiff;
 }/*
-Time Complexity: O(N*logN + N^2) => O(N^2)
+Time Complexity: Sorting: O(N*logN), overall : O(N*logN + N^2) => O(N^2)
 Space Complexity: O(N) which is required for sorting.
 */
 
