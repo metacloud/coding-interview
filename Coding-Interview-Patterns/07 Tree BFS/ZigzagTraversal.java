@@ -12,43 +12,45 @@ then right to left for the next level and keep alternating in the same manner fo
  / \   / \
 4  5  6   7   Zigzag Level Order Traversal: [[1], [3,2], [4,5,6,7]]
 
-# LeetCode 103. Binary Tree Zigzag Level Order Traversal
+# LeetCode 103. Binary Tree Zigzag Level Order Traversal [Medium]
 [Result]
 Runtime: 1 ms, faster than 88.41% of Java online submissions for Binary Tree Zigzag Level Order Traversal.
 Memory Usage: 36.3 MB, less than 99.93% of Java online submissions for Binary Tree Zigzag Level Order Traversal.
 */
-public class TreeNode {
+class TreeNode {
      int val;
      TreeNode left;
      TreeNode right;
      TreeNode(int x) { val = x; }
  }
 
-public List< List<Integer>> zigzagLevelOrder(TreeNode root) {
-    List<List<Integer>> result = new ArrayList<>();
-    if(root==null) return result;
+class Solution {
+    public List< List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        if(root==null) return result;
 
-    Queue<TreeNode> queue = new LinkedList<>();
-    queue.offer(root);
-    
-    boolean reversed = false;
-    while(!queue.isEmpty()){
-        int levelSize = queue.size();
-        List<Integer> levelNodes = new ArrayList<>();
-        for(int i=0; i<levelSize; i++){
-            TreeNode temp = queue.poll();
-            if(reversed){ 
-              levelNodes.add(0, temp.val);
-            } else { // reversed == false
-              levelNodes.add(temp.val);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        
+        boolean reversed = false;
+        while(!queue.isEmpty()){
+            int levelSize = queue.size();
+            List<Integer> levelNodes = new ArrayList<>();
+            for(int i=0; i<levelSize; i++){
+                TreeNode temp = queue.poll();
+                if(reversed){ 
+                  levelNodes.add(0, temp.val);
+                } else { // reversed == false
+                  levelNodes.add(temp.val);
+                }
+                if(temp.left != null) queue.offer(temp.left);
+                if(temp.right != null)  queue.offer(temp.right);
             }
-            if(temp.left != null) queue.offer(temp.left);
-            if(temp.right != null)  queue.offer(temp.right);
+            if(reversed){
+             reversed = false;
+            } else reversed = true;
+            result.add(levelNodes);
         }
-        if(reversed){
-         reversed = false;
-        } else reversed = true;
-        result.add(levelNodes);
+        return result;
     }
-    return result;
 }
