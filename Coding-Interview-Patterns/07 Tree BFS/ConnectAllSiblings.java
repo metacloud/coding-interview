@@ -19,19 +19,19 @@ class TreeNode {
 
 class ConnectAllSiblings {
   public void connect(TreeNode root) {
-    if(root==null || root.left == null && root.right == null) return;  	
+    if(root==null || root.left == null && root.right == null) return;   
     IterativeBFS(root);
   }
   private void IterativeBFS(TreeNode root){
-  	Queue<TreeNode> queue = new LinkedList<>();
-  	queue.offer(root);
-  	while(!queue.isEmpty()){
-  		TreeNode curr = queue.poll();
-  		if(curr.left != null) queue.offer(curr.left);
-  		if(curr.right != null) queue.offer(curr.right);
-  		if(queue.peek() != null){
-	  		curr.next = queue.peek();
-  		} else curr.next = null;	
-  	}
+    Queue<TreeNode> queue = new LinkedList<>();
+    queue.offer(root);
+    while(!queue.isEmpty()){
+        TreeNode curr = queue.poll();
+        if(curr.left != null) queue.offer(curr.left);
+        if(curr.right != null) queue.offer(curr.right);
+        if(queue.peek() != null){
+            curr.next = queue.peek();
+        } else curr.next = null;    
+    }
   }
 }
