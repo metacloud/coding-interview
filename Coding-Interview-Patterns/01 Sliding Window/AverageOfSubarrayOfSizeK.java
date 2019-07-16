@@ -1,4 +1,3 @@
-
 /*
 Pattern: Sliding Window
 00 Average of all subarrays of size K (easy)
@@ -6,51 +5,37 @@ Pattern: Sliding Window
 Given an array, find the average of all subarrays of size 'K' in it.
 */
 
-
-import java.util.Arrays;
-
 class AverageOfSubarrayOfSizeK {
   //Brute-Force
   public static double[] findAveragesInefficient(int K, int[] arr){
-    double[] ret = new double[arr.length-K+1];
-    for(int i=0; i<=arr.length-K; i++){
+    double[] result = new double[arr.length-K+1];
+    for(int i=0; i<arr.length-K+1; i++){
       double sum = 0;
       for(int j=i; j<i+K; j++){
         sum = sum + arr[j];
       }
-      ret[i] = sum/K;
+      result[i] = (sum/K);
     }
-    return ret;
+    return result;
   }/*
   Time Complexity: O(N*K)
   */
 
   public static double[] findAverages(int K, int[] arr){
+    double[] result = new double[arr.length - K +1];
+    int startPoint = 0, endPoint = 0;
 
-    double[] ret = new double[arr.length - K +1];
-    double sum = 0;
-    int startSub = 0;
-    int endSub = 0;
-
-    for(endSub = 0; endSub < arr.length; endSub++){
-        sum = sum + arr[endSub];
-
-        if(endSub >= K-1){
-            ret[startSub] = (sum / K);
-            sum = sum - arr[startSub];
-            startSub++;
-        }
+    double sum = 0.0;
+    for(endPoint = 0; endPoint < arr.length; endPoint++){
+      sum = sum + arr[endPoint];
+      if(endPoint >= K-1){
+        result[startPoint] = (sum/K);
+        sum = sum - arr[startPoint];
+        startPoint++;        
+      }
     }
-    return ret;
-  }
-
-
-  public static void main( String[] args){
-
-    double[] result = AverageOfSubarrayOfSizeK.findAveragesInefficient(5, new int[] { 1, 3, 2, 6, -1, 4, 1, 8, 2 });
-    System.out.println("Averages of subarrays of size K: " + Arrays.toString(result));
-    result = AverageOfSubarrayOfSizeK.findAverages(5, new int[] { 1, 3, 2, 6, -1, 4, 1, 8, 2 });
-    System.out.println("Averages of subarrays of size K: " + Arrays.toString(result));
-
-  }
-} // Time Complexity: O(N)
+    return result;
+  }/* 
+  Time Complexity: O(N)
+  */
+} 
