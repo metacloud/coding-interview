@@ -13,7 +13,6 @@ Memory Usage: 34.6 MB, less than 100.00% of Java online submissions for Remove E
 
 class RemoveElement {
   public static int remove(int[] arr, int key){
-
     int rmKeyArray = 0;
     for(int i=0; i < arr.length; i++){
       if(arr[i] != key){
@@ -26,12 +25,4 @@ class RemoveElement {
   Time Complexity: O(N)
   Space Complexity: O(1)
   */
-
-  public static void main(String[] args){
-    int[] arr = new int[] {3, 2, 3, 6, 3, 10, 9, 3};
-    System.out.println(RemoveElement.remove(arr, 3));
-
-    arr = new int[] {2, 11, 2, 2, 1};
-    System.out.println(RemoveElement.remove(arr,2));
-  }
 }
