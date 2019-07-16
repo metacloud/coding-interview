@@ -1,4 +1,3 @@
-
 /*
 Pattern: Fast & Slow pointers
 01 LinkedList Cycle (easy)
@@ -11,11 +10,9 @@ write a function to determine if the LinkedList has a cycle in it or not.
 Runtime: 0 ms, faster than 100.00% of Java online submissions for Linked List Cycle.
 Memory Usage: 36 MB, less than 99.94% of Java online submissions for Linked List Cycle.
 */
-
 class ListNode {
   int value = 0;
   ListNode next;
-
   ListNode(int value){
     this.value = value;
   }
@@ -23,7 +20,6 @@ class ListNode {
 
 class LinkedListCycle {
     public static boolean hasCycle(ListNode head){
-
       ListNode slow = head;
       ListNode fast = head;
 
@@ -39,20 +35,4 @@ class LinkedListCycle {
     Time Complexity: O(N) where N is the total number of nodes in the LinkedList.
     Space Complexity: O(1)
     */
-
-    public static void main(String[] args){
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(5);
-        head.next.next.next.next.next = new ListNode(6);
-        System.out.println("LinkedList has cycle: " + LinkedListCycle.hasCycle(head));
-
-        head.next.next.next.next.next.next = head.next.next;
-        System.out.println("LinkedList has cycle: " + LinkedListCycle.hasCycle(head));
-
-        head.next.next.next.next.next.next = head.next.next.next;
-        System.out.println("LinkedList has cycle: " + LinkedListCycle.hasCycle(head));
-    }
 }
