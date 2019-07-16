@@ -1,4 +1,3 @@
-
 /*
 Pattern: Fast & Slow pointers
 02 Start of LinkedList Cycle (medium)
@@ -21,44 +20,36 @@ class ListNode {
   }
 }
 
-/*
-Time Complexity: O(N)
-Space Complexity: O(1)
-*/
 class LinkedListCycleStart {
-    public static ListNode detectCycle(ListNode head){
-      int cycleLength = 0;
+    public static ListNode detectCycle(ListNode head){      
       ListNode slow = head;
       ListNode fast = head;
       while(fast != null && fast.next != null){
         slow = slow.next;
         fast = fast.next.next;
         if(slow==fast){
-          cycleLength = getCycleLength(slow);
-          break;
+          int cycleLength = getCycleLength(slow);
+          return findStartingNodeCycle(head, cycleLength);
         }
       }
-      if(cycleLength == 0){ //no cycle
-        return null;
-      }
-      return findStartingNodeCycle(head, cycleLength);
+      return null; // no cycle
     }
 
     private static int getCycleLength(ListNode slow){
-      ListNode current = slow.next;
-      int cycleLength = 1;
-      while(current != slow){
-        cycleLength++;
+      ListNode current = slow;
+      int cycleLength = 0;
+      do {
         current = current.next;
-      }
+        cycleLength++;
+      } while(current != slow);
       return cycleLength;
     }
 
     private static ListNode findStartingNodeCycle(ListNode head, int cycleLength){
-      ListNode pointer1 = head, pointer2 = head;
-      while(cycleLength > 0){
+      ListNode pointer1 = head;
+      ListNode pointer2 = head;
+      for(int i=0; i<cycleLength; i++){
         pointer2 = pointer2.next;
-        cycleLength--;
       }
       while(pointer1 != pointer2){
         pointer1 = pointer1.next;
@@ -66,23 +57,7 @@ class LinkedListCycleStart {
       }
       return pointer1;
     }
-
-
-    public static void main(String[] args) {
-      ListNode head = new ListNode(1);
-      head.next = new ListNode(2);
-      head.next.next = new ListNode(3);
-      head.next.next.next = new ListNode(4);
-      head.next.next.next.next = new ListNode(5);
-      head.next.next.next.next.next = new ListNode(6);
-
-      head.next.next.next.next.next.next = head.next.next;
-      System.out.println("LinkedList cycle start: " + LinkedListCycleStart.detectCycle(head).value);
-
-      head.next.next.next.next.next.next = head.next.next.next;
-      System.out.println("LinkedList cycle start: " + LinkedListCycleStart.detectCycle(head).value);
-
-      head.next.next.next.next.next.next = head;
-      System.out.println("LinkedList cycle start: " + LinkedListCycleStart.detectCycle(head).value);
-    }
-}
+}/*
+  Time Complexity: O(N)
+  Space Complexity: O(1)
+  */
