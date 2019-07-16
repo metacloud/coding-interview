@@ -25,9 +25,7 @@ class ReverseLinkedList {
     if(head==null || head.next==null) return head;
 
     ListNode current = head;
-    ListNode reversed = null;
-    ListNode temp = null;
-
+    ListNode reversed = null, temp = null;
     while(current != null){
       temp = current.next;
       current.next = reversed;
