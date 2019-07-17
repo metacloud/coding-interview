@@ -1,4 +1,3 @@
-
 /*
 Pattern: In-place Reversal of a LinkedList
 02 Reverse a Sub-list (medium)
@@ -10,8 +9,6 @@ Given the head of a LinkedList and two positions ‘p’ and ‘q’, reverse th
 Runtime: 0 ms, faster than 100.00% of Java online submissions for Reverse Linked List II.
 Memory Usage: 34.4 MB, less than 100.00% of Java online submissions for Reverse Linked List II.
 */
-
-import java.util.*;
 
 class ListNode {
   int value  = 0;
@@ -33,17 +30,21 @@ class ReverseSubList {
           current = current.next;
         }
 
-        //first part before index 'p'
+        // position: p-1
         ListNode beforeReversed = previous;
+        // current position: p, but will be the last node of the Reversed Part
+        ListNode lastNodeReversed = current;
 
-        //second part between index 'p' and index 'q'
-        ListNode reversedPart = current;
         for(int i=0; current != null && i<q-p+1; i++){
             ListNode temp = current.next;
             current.next = previous;
             previous = current;
             current = temp;
         }
+        /*
+        previous: first node of the Reversed Part 
+        current position: q+1
+        */
 
         // get correct position with the first part
         if(beforeReversed != null){ // p != 0
@@ -51,28 +52,11 @@ class ReverseSubList {
         } else{ // p==0
             head = previous;
         }
-
         // connect with the last part
-        reversedPart.next = current;
-
+        lastNodeReversed.next = current;
         return head;
     }/*
     Time Complexity: O(N)
     Space Complexity: O(1)
     */
-
-    public static void main(String[] args) {
-      ListNode head = new ListNode(1);
-      head.next = new ListNode(2);
-      head.next.next = new ListNode(3);
-      head.next.next.next = new ListNode(4);
-      head.next.next.next.next = new ListNode(5);
-
-      ListNode result = ReverseSubList.reverse(head, 2, 4);
-      System.out.print("Nodes of the reversed LinkedList are: ");
-      while (result != null) {
-        System.out.print(result.value + " ");
-        result = result.next;
-      }
-    }
 }
