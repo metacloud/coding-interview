@@ -1,4 +1,3 @@
-
 /*
 Pattern: Tree BFS
 02 Reverse Level Order Traversal (easy)
@@ -9,12 +8,9 @@ You should populate the values of all nodes in each level from left to right in 
 
 # LeetCode 107. Binary Tree Level Order Traversal II [Easy]
 [Result]
-Runtime: 1 ms, faster than 89.86% of Java online submissions for Binary Tree Level Order Traversal II.
-Memory Usage: 36.6 MB, less than 99.96% of Java online submissions for Binary Tree Level Order Traversal II.
+Runtime: 1 ms, faster than 96.18% of Java online submissions for Binary Tree Level Order Traversal II.
+Memory Usage: 36.4 MB, less than 99.94% of Java online submissions for Binary Tree Level Order Traversal II.
 */
-
-
-import java.util.*;
 
 class TreeNode {
   int val;
@@ -41,13 +37,8 @@ class ReverseLevelOrderTraversal{
         for(int i=0; i<nodesLevel; i++){
             TreeNode currentNode = queue.poll();
             currentLevel.add(currentNode.val);
-
-            if(currentNode.left != null) {
-              queue.offer(currentNode.left);
-            }
-            if(currentNode.right != null){
-              queue.offer(currentNode.right);
-            }
+            if(currentNode.left != null) queue.offer(currentNode.left);
+            if(currentNode.right != null) queue.offer(currentNode.right);
         }
         result.add(0, currentLevel);
       }
@@ -56,15 +47,4 @@ class ReverseLevelOrderTraversal{
   Time Complexity: O(N)
   Space Complexity: O(N)
   */
-
-  public static void main(String[] args){
-    TreeNode root = new TreeNode(12);
-    root.left = new TreeNode(7);
-    root.right = new TreeNode(1);
-    root.left.left = new TreeNode(9);
-    root.right.left = new TreeNode(10);
-    root.right.right = new TreeNode(5);
-    List<List<Integer>> result = ReverseLevelOrderTraversal.traverse(root);
-    System.out.println("Reverse level order traversal: " + result);
-  }
 }
