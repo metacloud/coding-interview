@@ -123,7 +123,7 @@
 |06 | Unique Generalized Abbreviations |  | | Hard | 
 
 
-#### 11 Modified Binary Search
+#### 11. Modified Binary Search
 | # | Title | Question | Solution | Difficulty | 
 | - |-------| -------- | -------- | ---------- |
 |01 | Order-agnostic Binary Search | [LeetCode 704](https://leetcode.com/problems/binary-search/description/) | [Java](./Coding-Interview-Patterns/11&#32;Modified&#32;Binary&#32;Search/BinarySearch.java)| Easy | 
@@ -137,4 +137,51 @@
 |08 | Search Bitonic Array | | [Java](./Coding-Interview-Patterns/11&#32;Modified&#32;Binary&#32;Search/SearchBitonicArray.java) | Medium | 
 |09 | Search in Rotated Array | | | Medium | 
 |10 | Rotation Count | | | Medium | 
+
+
+#### 12. Top 'K' Elements
+| # | Title | Question | Solution | Difficulty | 
+| - |-------| -------- | -------- | ---------- |
+|01 | Top 'K' Numbers |  | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/KLargestNumbers.java)| Easy | 
+|02 | Kth Smallest Number |  | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/KthSmallestNumber.java)| Easy |
+|03 | 'K' Closest Points to the Origin | [LeetCode 973](https://leetcode.com/problems/k-closest-points-to-origin/) | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/KClosestPointsToOrigin.java)| Medium | 
+|04 | Connect Ropes |  | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/ConnectRopes.java)| Easy | 
+|05 | Top 'K' Frequent Numbers | [LeetCode 347](https://leetcode.com/problems/top-k-frequent-elements/) | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/TopKFrequentNumbers.java)| Medium | 
+|06 | Frequency Sort | [LeetCode 451](https://leetcode.com/problems/sort-characters-by-frequency/) | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/FrequencySort.java)| Medium | 
+|07 | Kth Largest Number in a Stream | | | Medium | 
+|08 | 'K' Closest Numbers | | | Medium | 
+|09 | Maximum Distinct Elements | | | Medium | 
+|10 | Sum of Elements | | | Medium | 
+|11 | Rearrange String | | | Medium | 
+
+
+#### 13. K-way Merge
+| # | Title | Question | Solution | Difficulty | 
+| - |-------| -------- | -------- | ---------- |
+|01 | Merge K Sorted Lists | [LeetCode 23](https://leetcode.com/problems/merge-k-sorted-lists/) | [Java](./Coding-Interview-Patterns/13%20K-way%20merge/MergeKSortedLists.java)| Hard |
+|02 | Kth Smallest Number in M Sorted Lists |  | [Java](./Coding-Interview-Patterns/13%20K-way%20merge/KthSmallestInMSortedArrays.java)| Medium |
+|03 | Kth Smallest Number in a Sorted Matrix | [LeetCode 378](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/) | [Java](./Coding-Interview-Patterns/13%20K-way%20merge/KthSmallestInSortedMatrix.java)| Hard |
+|04 | Smallest Number Range |  | | Hard |
+|05 | K Pairs with Largest Sums |  | [Java](./Coding-Interview-Patterns/13%20K-way%20merge/LargestPairs.java)| Hard |
+
+
+#### 14. 0/1 Knapsack(Dynamic Programming)
+| # | Title | Question | Solution | Difficulty | 
+| - |-------| -------- | -------- | ---------- |
+|01 | 0/1 Knapsack Recursive |  | [Java](./Coding-Interview-Patterns/14%20Knapsack/KnapsackRecursive.java)| Medium |
+|   | 0/1 Knapsack Top-Down |  | [Java](./Coding-Interview-Patterns/14%20Knapsack/KnapsackTopDown.java)| Medium |
+|02 | Equal Subset Sum Partition |  | | Medium |
+|03 | Subset Sum |  | | Medium |
+|04 | Minimum Subset Sum Difference |  | | Hard |
+
+
+#### 15. Topological Sort
+| # | Title | Question | Solution | Difficulty | 
+| - |-------| -------- | -------- | ---------- |
+|01 | Topological Sort |  | [Java](./Coding-Interview-Patterns/15%20Topological%20Sort/TopologicalSort.java)| Medium |
+|02 | Tasks Scheduling |  | | Medium |
+|03 | Tasks Scheduling Order |  | | Medium |
+|04 | All Tasks Scheduling Orders |  | | Hard |
+|05 | Alien Dictionary |  | | Hard |
+
 
