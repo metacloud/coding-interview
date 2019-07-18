@@ -1,4 +1,3 @@
-
 /*
 Pattern: Cyclic Sort
 01 Cyclic Sort (easy)
@@ -13,14 +12,13 @@ though each number is actually an object.
 */
 
 class CyclicSort {
-
-  public static void sort(int[] nums){
+  public void sort(int[] nums){
       int i=0;
       while(i<nums.length){
-        int correctIndex = nums[i]-1;
-        if(nums[i]==nums[correctIndex]){
+        if(nums[i] == i+1){
           i++;
         } else {
+          int correctIndex = nums[i]-1;
           int temp = nums[i];
           nums[i] = nums[correctIndex];
           nums[correctIndex] = temp;
@@ -30,18 +28,4 @@ class CyclicSort {
   Time Complexity: O(N)
   Space Complexity: O(1)
   */
-
-  public static void main(String[] args) {
-    int[] arr = new int[] { 3, 1, 5, 4, 2 };
-    CyclicSort.sort(arr);
-    for (int num : arr)
-      System.out.print(num + " ");
-    System.out.println();
-
-    arr = new int[] { 2, 6, 4, 3, 1, 5 };
-    CyclicSort.sort(arr);
-    for (int num : arr)
-      System.out.print(num + " ");
-    System.out.println();
-  }
 }
