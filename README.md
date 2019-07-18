@@ -1,3 +1,35 @@
+## [LeetCode Top 100 Liked Questions](https://leetcode.com/problemset/top-100-liked-questions/)
+| # | Title | Question | Solution | Difficulty | 
+| - |-------| -------- | -------- | ---------- |
+|01 | Two Sum | [LeetCode 1](https://leetcode.com/problems/two-sum/) | | Easy |
+|02 | Valid Parentheses | [LeetCode 20](https://leetcode.com/problems/valid-parentheses/) | | Easy |
+|03 | Merge Two Sorted Lists | [LeetCode 21](https://leetcode.com/problems/merge-two-sorted-lists/) | | Easy |
+|04 | Maximum Subarray | [LeetCode 53](https://leetcode.com/problems/maximum-subarray/) | | Easy |
+|05 | Climbing Stairs | [LeetCode 70](https://leetcode.com/problems/climbing-stairs/) | | Easy |
+|06 | Symmetric Tree | [LeetCode 101](https://leetcode.com/problems/symmetric-tree/) | | Easy |
+|07 | Maximum Depth of Binary Tree | [LeetCode 104](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | | Easy |
+|08 | Best Time to Buy and Sell Stock | [LeetCode 121](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | | Easy |
+|09 | Single Number | [LeetCode 136](https://leetcode.com/problems/single-number/) | | Easy |
+|10 | Linked List Cycle | [LeetCode 141](https://leetcode.com/problems/linked-list-cycle/) | | Easy |
+|11 | Min Stack | [LeetCode 155](https://leetcode.com/problems/min-stack/) | | Easy |
+|12 | Intersection of Two Linked Lists | [LeetCode 160](https://leetcode.com/problems/intersection-of-two-linked-lists/) | | Easy |
+|13 | Majority Element | [LeetCode 169](https://leetcode.com/problems/majority-element/) | | Easy |
+|14 | House Robber | [LeetCode 198](https://leetcode.com/problems/house-robber/) | | Easy |
+|15 | Reverse Linked List | [LeetCode 206](https://leetcode.com/problems/reverse-linked-list/) | | Easy |
+|16 | Invert Binary Tree | [LeetCode 226](https://leetcode.com/problems/invert-binary-tree/) | | Easy |
+|17 | Palindrome Linked List | [LeetCode 234](https://leetcode.com/problems/palindrome-linked-list/) | | Easy |
+|18 | Move Zeroes | [LeetCode 283](https://leetcode.com/problems/move-zeroes/) | | Easy |
+|19 | Path Sum III | [LeetCode 437](https://leetcode.com/problems/path-sum-iii/) | | Easy |
+|20 | Find All Anagrams in a String | [LeetCode 438](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | | Easy |
+|21 | Find All Numbers Disappeared in an Array | [LeetCode 448](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/) | | Easy |
+|22 | Convert BST to Greater Tree | [LeetCode 538](https://leetcode.com/problems/convert-bst-to-greater-tree) | | Easy |
+|23 | Diameter of Binary Tree | [LeetCode 543](https://leetcode.com/problems/diameter-of-binary-tree/) | | Easy |
+|24 | Shortest Unsorted Continuous Subarray | [LeetCode 581](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/) | | Easy |
+|25 | Merge Two Binary Trees | [LeetCode 617](https://leetcode.com/problems/merge-two-binary-trees/) | | Easy |
+|26 | Jewels and Stones | [LeetCode 771](https://leetcode.com/problems/jewels-and-stones/) | | Easy |
+
+
+
 
 ## [Coding-Interview-Patterns](./Coding-Interview-Patterns)
 #### 01. Sliding Window
