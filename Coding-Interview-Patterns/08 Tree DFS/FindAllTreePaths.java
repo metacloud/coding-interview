@@ -22,24 +22,24 @@ class TreeNode {
 };
 
 class FindAllTreePaths {
-  List<List<Integer>> allPaths = new ArrayList<>();
   public List<List<Integer>> findPaths(TreeNode root, int sum) {
+      List<List<Integer>> allPaths = new ArrayList<>();
       if(root==null) return allPaths;
 
       List<Integer> currentPath = new ArrayList<>();
-      recursiveTraversal(root, sum, currentPath);
+      recursiveTraversal(root, sum, currentPath, allPaths);
       return allPaths;
   }
 
-  private void recursiveTraversal(TreeNode root, int sum, List<Integer> currentPath){
+  private void recursiveTraversal(TreeNode root, int sum, List<Integer> currentPath, List<List<Integer>> allPaths){
       if(root==null) return;
       
       currentPath.add(root.val);
       if(root.val == sum && root.left==null && root.right==null){
           allPaths.add(new ArrayList<Integer>(currentPath));
       }    
-      recursiveTraversal(root.left, sum-root.val, currentPath);
-      recursiveTraversal(root.right, sum-root.val, currentPath);
+      recursiveTraversal(root.left, sum-root.val, currentPath, allPaths);
+      recursiveTraversal(root.right, sum-root.val, currentPath, allPaths);
       // for backtracking
       currentPath.remove(currentPath.size()-1);
   }/*
