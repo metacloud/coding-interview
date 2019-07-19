@@ -6,19 +6,16 @@ Given an unsorted array of numbers, find Kth smallest number in it.
 Please note that it is the Kth smallest number in the sorted order, not the Kth distinct element.
 Note: For a detailed discussion about different approaches to solve this problem, take a look at Kth Smallest Number.
 
-[ Example ]
+[Example]
 Input: [1, 5, 12, 2, 11, 5], K = 3
 Output: 5
 Explanation: The 3rd smallest number is '5', as the first two smaller numbers are [1, 2].
 */
 
-import java.util.*;
-
 class KthSmallestNumber {
-      public static int findKthSmallestNumber(int[] nums, int k){
+      public int findKthSmallestNumber(int[] nums, int k){
         //maxHeap
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a,b)->Integer.compare(b,a));
-
         for(int i=0; i<k; i++){
           maxHeap.add(nums[i]);
         }
@@ -44,17 +41,4 @@ class KthSmallestNumber {
       : Time Complexity: O(N+KlogN)
       : Space Complexity: O(N)
       */
-
-      public static void main(String[] args) {
-      int result = KthSmallestNumber.findKthSmallestNumber(new int[] { 1, 5, 12, 2, 11, 5 }, 3);
-      System.out.println("Kth smallest number is: " + result);
-
-      // since there are two 5s in the input array, our 3rd and 4th smallest numbers should be a '5'
-      result = KthSmallestNumber.findKthSmallestNumber(new int[] { 1, 5, 12, 2, 11, 5 }, 4);
-      System.out.println("Kth smallest number is: " + result);
-
-      result = KthSmallestNumber.findKthSmallestNumber(new int[] { 5, 12, 11, -1, 12 }, 3);
-      System.out.println("Kth smallest number is: " + result);
-    }
-
 }
