@@ -3,11 +3,6 @@ Pattern: Two Heaps
 01 Find the Median of a Number Stream (medium)
 
 Design a class to calculate the median of a number stream.
-The class should have the following two methods:
-
-1. insertNum(int num): stores the number in the class
-2. findMedian(): returns the median of all numbers inserted in the class
-If the count of numbers inserted in the class is even, the median will be the average of the middle two numbers.
 
 # LeetCode 295. Find Median from Data Stream [Hard]
 [Result]
@@ -15,45 +10,34 @@ Runtime: 106 ms, faster than 92.79% of Java online submissions for Find Median f
 Memory Usage: 63.7 MB, less than 79.19% of Java online submissions for Find Median from Data Stream.
 */
 
-
-import java.util.*;
-
 class MedianOfAStream {
+  PriorityQueue<Integer> minHeap;
+  PriorityQueue<Integer> maxHeap;
 
-  PriorityQueue<Integer> maxHeap = new PriorityQueue<>((x,y)->Integer.compare(y,x)); // first half of the nums
-  PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // second half of the nums
+  public MedianFinder() {
+    minHeap = new PriorityQueue<>((a,b)->(a-b));
+    maxHeap = new PriorityQueue<>((a,b)->(b-a));
+  }
 
-  public void insertNum(int num){ // O(logN) : Insertion in the heap.
+  public void addNum(int num){ // O(logN) : Insertion in the heap.
     if(maxHeap.isEmpty() || maxHeap.peek() >= num) maxHeap.add(num);
     else minHeap.add(num);
-
-    if(maxHeap.size() > minHeap.size()+1){
-      minHeap.add(maxHeap.poll());
-    } else if (maxHeap.size() < minHeap.size()){
+    // adjust Heaps
+    if(maxHeap.size() < minHeap.size()){
       maxHeap.add(minHeap.poll());
+    } else if(maxHeap.size() > minHeap.size()+1){
+      minHeap.add(maxHeap.poll());
     }
   }
 
-
   public double findMedian() { // O(1)
-    if(maxHeap.size() == minHeap.size()){//even number
-      return (double)(maxHeap.peek()+minHeap.peek()) / 2;
+    if(maxHeap.size()==minHeap.size()){
+      return ((maxHeap.peek()+minHeap.peek())/2.0);
     }
     return maxHeap.peek();
   }
   /*
   Time Complexity: O(logN)
-  Space Complexity: O(N)
+  Space Complexity: O(N) as we will be storing all the numbers.
   */
-
-  public static void main(String[] args) {
-    MedianOfAStream medianOfAStream = new MedianOfAStream();
-    medianOfAStream.insertNum(3);
-    medianOfAStream.insertNum(1);
-    System.out.println("The median is: " + medianOfAStream.findMedian());
-    medianOfAStream.insertNum(5);
-    System.out.println("The median is: " + medianOfAStream.findMedian());
-    medianOfAStream.insertNum(4);
-    System.out.println("The median is: " + medianOfAStream.findMedian());
-  }
 }
