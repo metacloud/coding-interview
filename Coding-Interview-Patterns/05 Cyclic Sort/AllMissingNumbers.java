@@ -1,22 +1,18 @@
-
 /*
 Pattern: Cyclic Sort
 03 Find all Missing Numbers (easy)
 
 We are given an unsorted array containing numbers taken from the range 1 to ‘n’.
-The array can have duplicates, which means some numbers will be missing.
-Find all those missing numbers.
+The array can have duplicates, which means some numbers will be missing. Find all those missing numbers.
 
-Input: [2, 3, 1, 8, 2, 3, 5, 1]
-Output: 4, 6, 7
-Explanation: The array should have all numbers from 1 to 8, due to duplicates 4, 6, and 7 are missing.
+# LeetCode 448. Find All Numbers Disappeared in an Array [Easy]
+[Result]
+Runtime: 6 ms, faster than 80.27% of Java online submissions for Find All Numbers Disappeared in an Array.
+Memory Usage: 47 MB, less than 97.83% of Java online submissions for Find All Numbers Disappeared in an Array.
 */
 
-import java.util.*;
-
 class AllMissingNumbers {
-
-  public static List<Integer> findNumbers(int[] nums){
+  public List<Integer> findNumbers(int[] nums){
     List<Integer> missingNumbers = new ArrayList<>();
     int i=0;
     while(i < nums.length){
@@ -28,7 +24,6 @@ class AllMissingNumbers {
       }
       else i++;
     }
-
     for(i=0; i<nums.length; i++){
       if(i != nums[i]-1){
         missingNumbers.add(i+1);
@@ -39,15 +34,4 @@ class AllMissingNumbers {
   Time Complexity: O(N)
   Space Complexity: O(1)
   */
-
-  public static void main(String[] args) {
-    List<Integer> missing = AllMissingNumbers.findNumbers(new int[] { 2, 3, 1, 8, 2, 3, 5, 1 });
-    System.out.println("Missing numbers: " + missing);
-
-    missing = AllMissingNumbers.findNumbers(new int[] { 2, 4, 1, 2 });
-    System.out.println("Missing numbers: " + missing);
-
-    missing = AllMissingNumbers.findNumbers(new int[] { 2, 3, 2, 1 });
-    System.out.println("Missing numbers: " + missing);
-  }
 }
