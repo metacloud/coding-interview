@@ -13,9 +13,8 @@ Memory Usage: 36.6 MB, less than 98.93% of Java online submissions for Subsets.
 class Subsets {
   public List<List<Integer>> findSubsets(int[] nums){
     List<List<Integer>> subsets = new ArrayList<>();
-    //add EmptySet
     subsets.add(new ArrayList<>());
-
+    
     for(int num : nums){
         int n = subsets.size();
         for(int i=0; i<n; i++){
