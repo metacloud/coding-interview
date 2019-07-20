@@ -1,9 +1,9 @@
 ## [LeetCode Top 100 Liked Questions](https://leetcode.com/problemset/top-100-liked-questions/)
 | # | Title | Question | Solution | Difficulty | 
 | - |-------| -------- | -------- | ---------- |
-|01 | Two Sum | [LeetCode 1](https://leetcode.com/problems/two-sum/) | | Easy |
+|01 | Two Sum | [LeetCode 1](https://leetcode.com/problems/two-sum/) | [Java](/LeetCode/Top%20100%20Liked%20Questions/01%20Easy/TwoSum.java)| Easy |
 |02 | Valid Parentheses | [LeetCode 20](https://leetcode.com/problems/valid-parentheses/) | | Easy |
-|03 | Merge Two Sorted Lists | [LeetCode 21](https://leetcode.com/problems/merge-two-sorted-lists/) | | Easy |
+|03 | Merge Two Sorted Lists | [LeetCode 21](https://leetcode.com/problems/merge-two-sorted-lists/) | [Java](/LeetCode/Top%20100%20Liked%20Questions/01%20Easy/MergeTwoSortedLists.java)| Easy |
 |04 | Maximum Subarray | [LeetCode 53](https://leetcode.com/problems/maximum-subarray/) | | Easy |
 |05 | Climbing Stairs | [LeetCode 70](https://leetcode.com/problems/climbing-stairs/) | | Easy |
 |06 | Symmetric Tree | [LeetCode 101](https://leetcode.com/problems/symmetric-tree/) | | Easy |
@@ -67,7 +67,7 @@
 | # | Title | Question | Solution | Difficulty | 
 | - |-------| -------- | -------- | ---------- |
 |01 | LinkedList Cycle | [LeetCode 141](https://leetcode.com/problems/linked-list-cycle/) | [Java](./Coding-Interview-Patterns/03&#32;Fast&#32;&&#32;Slow&#32;pointers/LinkedListCycle.java)  | Easy | 
-| | LinkedList Cycle Length |  | [Java](./Coding-Interview-Patterns/03&#32;Fast&#32;&&#32;Slow&#32;pointers/LinkedListCycleLength.java) | Easy | 
+| | LinkedList Cycle Length | [GeeksforGeeks](https://www.geeksforgeeks.org/find-length-of-loop-in-linked-list/) | [Java](./Coding-Interview-Patterns/03&#32;Fast&#32;&&#32;Slow&#32;pointers/LinkedListCycleLength.java) | Easy | 
 |02 | Start of LinkedList Cycle | [LeetCode 142](https://leetcode.com/problems/linked-list-cycle-ii/) | [Java](./Coding-Interview-Patterns/03&#32;Fast&#32;&&#32;Slow&#32;pointers/LinkedListCycleStart.java)  | Medium | 
 |03 | Happy Number | [LeetCode 202](https://leetcode.com/problems/happy-number/) | [Java](./Coding-Interview-Patterns/03&#32;Fast&#32;&&#32;Slow&#32;pointers/HappyNumber.java)  | Easy | 
 |04 | Middle of the LinkedList | [LeetCode 876](https://leetcode.com/problems/middle-of-the-linked-list/) | [Java](./Coding-Interview-Patterns/03&#32;Fast&#32;&&#32;Slow&#32;pointers/MiddleOfLinkedList.java)  | Easy | 
@@ -159,8 +159,8 @@
 | # | Title | Question | Solution | Difficulty | 
 | - |-------| -------- | -------- | ---------- |
 |01 | Order-agnostic Binary Search | [LeetCode 704](https://leetcode.com/problems/binary-search/description/) | [Java](./Coding-Interview-Patterns/11&#32;Modified&#32;Binary&#32;Search/BinarySearch.java)| Easy | 
-|02 | Ceiling of a Number |  | [Java](./Coding-Interview-Patterns/11&#32;Modified&#32;Binary&#32;Search/CeilingOfANumber.java)| Medium | 
-| | Floor of a Number | | [Java](./Coding-Interview-Patterns/11&#32;Modified&#32;Binary&#32;Search/FloorOfANumber.java)| Medium | 
+|02 | Ceiling of a Number | [GeeksforGeeks](https://www.geeksforgeeks.org/ceiling-in-a-sorted-array/) | [Java](./Coding-Interview-Patterns/11&#32;Modified&#32;Binary&#32;Search/CeilingOfANumber.java)| Medium | 
+| | Floor of a Number | [GeeksforGeeks](https://www.geeksforgeeks.org/floor-in-a-sorted-array/)| [Java](./Coding-Interview-Patterns/11&#32;Modified&#32;Binary&#32;Search/FloorOfANumber.java)| Medium | 
 |03 | Next Letter | | [Java](./Coding-Interview-Patterns/11&#32;Modified&#32;Binary&#32;Search/NextLetter.java)| Medium | 
 |04 | Number Range | | | Medium | 
 |05 | Search in a Sorted Infinite Array | | | Medium | 
@@ -174,8 +174,8 @@
 #### 12. Top 'K' Elements
 | # | Title | Question | Solution | Difficulty | 
 | - |-------| -------- | -------- | ---------- |
-|01 | Top 'K' Numbers |  | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/KLargestNumbers.java)| Easy | 
-|02 | Kth Smallest Number |  | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/KthSmallestNumber.java)| Easy |
+|01 | Top 'K' Numbers | [GeeksforGeeks](https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/) | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/KLargestNumbers.java)| Easy | 
+|02 | Kth Smallest Number | [GeeksforGeeks](https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/) | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/KthSmallestNumber.java)| Easy |
 |03 | 'K' Closest Points to the Origin | [LeetCode 973](https://leetcode.com/problems/k-closest-points-to-origin/) | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/KClosestPointsToOrigin.java)| Medium | 
 |04 | Connect Ropes |  | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/ConnectRopes.java)| Easy | 
 |05 | Top 'K' Frequent Numbers | [LeetCode 347](https://leetcode.com/problems/top-k-frequent-elements/) | [Java](./Coding-Interview-Patterns/12&#32;Top&#32;K-Elements/TopKFrequentNumbers.java)| Medium | 
@@ -197,7 +197,7 @@
 |05 | K Pairs with Largest Sums |  | [Java](./Coding-Interview-Patterns/13%20K-way%20merge/LargestPairs.java)| Hard |
 
 
-#### 14. 0/1 Knapsack(Dynamic Programming)
+#### 14. 0/1 Knapsack (Dynamic Programming)
 | # | Title | Question | Solution | Difficulty | 
 | - |-------| -------- | -------- | ---------- |
 |01 | 0/1 Knapsack Recursive |  | [Java](./Coding-Interview-Patterns/14%20Knapsack/KnapsackRecursive.java)| Medium |
