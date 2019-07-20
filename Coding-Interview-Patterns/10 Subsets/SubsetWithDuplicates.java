@@ -14,10 +14,10 @@ Memory Usage: 36.4 MB, less than 99.28% of Java online submissions for Subsets I
 
 class SubsetWithDuplicates {
   public List<List<Integer>> findSubsets(int[] nums){
+    Arrays.sort(nums);
     List<List<Integer>> subsets = new ArrayList<>();
     subsets.add(new ArrayList<>());
 
-    Arrays.sort(nums);
     int start = 0, end = 0;
     for(int i=0; i<nums.length; i++){
       start = 0;
@@ -40,3 +40,37 @@ class SubsetWithDuplicates {
   ; for output list
   */
 }
+
+
+class Solution {
+  public List<List<Integer>> subsetsWithDup(int[] nums) {
+    Arrays.sort(nums);
+    List<List<Integer>> result = new ArrayList<>();
+    result.add(new ArrayList<>());        
+
+    int currSize = 0;
+    for(int i=0; i<nums.length; i++){
+      if(i>0 && nums[i-1]==nums[i]){
+        int size = result.size();
+        for(int j=currSize; j<size; j++){
+          List<Integer> set = new ArrayList<>(result.get(j));
+          set.add(nums[i]);
+          result.add(set);
+        }
+        currSize = size;
+      }
+      else {
+        currSize = result.size();
+        for(int j=0; j<currSize; j++){
+          List<Integer> set = new ArrayList<>(result.get(j));
+          set.add(nums[i]);
+          result.add(set);
+        }
+      }
+    }
+    return result;
+  }
+}/*
+Runtime: 1 ms, faster than 100.00% of Java online submissions for Subsets II.
+Memory Usage: 37.4 MB, less than 99.18% of Java online submissions for Subsets II.
+*/
