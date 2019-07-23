@@ -24,5 +24,8 @@ class Solution {
         prev.next = l1 == null ? l2 : l1;
         return prehead.next;
     }
-}
+}/*
+Time Complexity: O(N) where N is the total number of elements in l1 + l2 
+Space Complexity: O(1)
+*/
 
