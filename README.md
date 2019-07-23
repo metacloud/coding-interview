@@ -4,18 +4,18 @@
 |01 | Two Sum | [LeetCode 1](https://leetcode.com/problems/two-sum/) | [Java](/LeetCode/Top%20100%20Liked%20Questions/01%20Easy/TwoSum.java)| Easy |
 |02 | Valid Parentheses | [LeetCode 20](https://leetcode.com/problems/valid-parentheses/) | | Easy |
 |03 | Merge Two Sorted Lists | [LeetCode 21](https://leetcode.com/problems/merge-two-sorted-lists/) | [Java](/LeetCode/Top%20100%20Liked%20Questions/01%20Easy/MergeTwoSortedLists.java)| Easy |
-|04 | Maximum Subarray | [LeetCode 53](https://leetcode.com/problems/maximum-subarray/) | | Easy |
+|04 | Maximum Subarray | [LeetCode 53](https://leetcode.com/problems/maximum-subarray/) | [Java](/LeetCode/Top%20100%20Liked%20Questions/01%20Easy/MaximumSubarray.java) | Easy |
 |05 | Climbing Stairs | [LeetCode 70](https://leetcode.com/problems/climbing-stairs/) | | Easy |
-|06 | Symmetric Tree | [LeetCode 101](https://leetcode.com/problems/symmetric-tree/) | | Easy |
-|07 | Maximum Depth of Binary Tree | [LeetCode 104](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | | Easy |
+|06 | Symmetric Tree | [LeetCode 101](https://leetcode.com/problems/symmetric-tree/) | [Java](/LeetCode/Top%20100%20Liked%20Questions/01%20Easy/SymmetricTree.java) | Easy |
+|07 | Maximum Depth of Binary Tree | [LeetCode 104](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | [Java](/LeetCode/Top%20100%20Liked%20Questions/01%20Easy/MaximumDepthofBinaryTree.java) | Easy |
 |08 | Best Time to Buy and Sell Stock | [LeetCode 121](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | | Easy |
-|09 | Single Number | [LeetCode 136](https://leetcode.com/problems/single-number/) | | Easy |
-|10 | Linked List Cycle | [LeetCode 141](https://leetcode.com/problems/linked-list-cycle/) | | Easy |
-|11 | Min Stack | [LeetCode 155](https://leetcode.com/problems/min-stack/) | | Easy |
+|09 | Single Number | [LeetCode 136](https://leetcode.com/problems/single-number/) | [Java](/LeetCode/Top%20100%20Liked%20Questions/01%20Easy/SingleNumber.java) | Easy |
+|10 | Linked List Cycle | [LeetCode 141](https://leetcode.com/problems/linked-list-cycle/) | [Java](/LeetCode/Top%20100%20Liked%20Questions/01%20Easy/LinkedListCycle.java) | Easy |
+|11 | Min Stack | [LeetCode 155](https://leetcode.com/problems/min-stack/) | [Java](/LeetCode/Top%20100%20Liked%20Questions/01%20Easy/MinStack.java) | Easy |
 |12 | Intersection of Two Linked Lists | [LeetCode 160](https://leetcode.com/problems/intersection-of-two-linked-lists/) | | Easy |
-|13 | Majority Element | [LeetCode 169](https://leetcode.com/problems/majority-element/) | | Easy |
+|13 | Majority Element | [LeetCode 169](https://leetcode.com/problems/majority-element/) | [Java](/LeetCode/Top%20100%20Liked%20Questions/01%20Easy/MajorityElement.java) | Easy |
 |14 | House Robber | [LeetCode 198](https://leetcode.com/problems/house-robber/) | | Easy |
-|15 | Reverse Linked List | [LeetCode 206](https://leetcode.com/problems/reverse-linked-list/) | | Easy |
+|15 | Reverse Linked List | [LeetCode 206](https://leetcode.com/problems/reverse-linked-list/) | [Java](/LeetCode/Top%20100%20Liked%20Questions/01%20Easy/ReverseLinkedList.java) | Easy |
 |16 | Invert Binary Tree | [LeetCode 226](https://leetcode.com/problems/invert-binary-tree/) | | Easy |
 |17 | Palindrome Linked List | [LeetCode 234](https://leetcode.com/problems/palindrome-linked-list/) | | Easy |
 |18 | Move Zeroes | [LeetCode 283](https://leetcode.com/problems/move-zeroes/) | | Easy |
