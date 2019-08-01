@@ -205,14 +205,3 @@
 |03 | Subset Sum |  | | Medium |
 |04 | Minimum Subset Sum Difference |  | | Hard |
 
-
-#### 15. Topological Sort
-| # | Title | Question | Solution | Difficulty | 
-| - |-------| -------- | -------- | ---------- |
-|01 | Topological Sort |  | [Java](./Coding-Interview-Patterns/15%20Topological%20Sort/TopologicalSort.java)| Medium |
-|02 | Tasks Scheduling |  | | Medium |
-|03 | Tasks Scheduling Order |  | | Medium |
-|04 | All Tasks Scheduling Orders |  | | Hard |
-|05 | Alien Dictionary |  | | Hard |
-
-
