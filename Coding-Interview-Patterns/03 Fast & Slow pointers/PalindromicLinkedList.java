@@ -12,8 +12,7 @@ class Solution {
     public boolean isPalindrome(ListNode head) {
         if(head==null || head.next==null) return true;
 
-        ListNode slow = head;
-        ListNode fast = head;
+        ListNode slow = head, fast = head;
         while(fast != null && fast.next != null){ //to get the middle of the LinkedList
           slow = slow.next;
           fast = fast.next.next;
