@@ -1,9 +1,6 @@
-
 /*
 Pattern: Fast & Slow pointers
 05 Palindrome LinkedList (medium)
-
-
 
 # LeetCode 234. Palindrome Linked List [Easy]
 [Result]
