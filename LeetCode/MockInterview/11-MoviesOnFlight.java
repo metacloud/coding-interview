@@ -20,27 +20,24 @@ public int[] findMaxTwoMovies(int[] movie_duration, int d){
 
 	Arrays.sort(movies);
 	int start=0, end=movies.length-1;
-    int max = Integer.MIN_VALUE;
-	int[] ret = new int[2];
+	int m1=0, m2=0;
 
 	while(start < max){
 		currDuration = movie_duration[start] + movie_duration[end];
 		if(currDuration == target){
-			ret[0] = movie_duration[start], ret[1] = movie_duration[end];
-			return ret;
+			return new int[] {movie_duration[start], movie_duration[end]};
 		}
-
 		else if(currDuration < target){
-			max = Math.max(max, currDuration);
-			ret[0] = movie_duration[start], ret[1] = movie_duration[end];
+			m1 = movie_duration[start];
+			m2 = movie_duration[end];
 			start++;
 		}
 		else { // currDuration > target
 			end--;
 		}
 	}
-	if(max == Integer.MIN_VALUE) return new int {-1, -1};
-	return ret;
+	if(m1 == m2) return new int[] {-1, -1};
+	return new int[] {m1, m2};
 }
 
 
