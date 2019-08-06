@@ -12,17 +12,16 @@ Explanation: The longest substring with no more than '2' distinct characters is 
 
 */
 
-import java.util.*;
-
 class LongestSubstringKDistinct {
   public static int findLength(String str, int k) {
+    if(str==null || str.length()==0 || str.length()<k)
+      throw new IllegalArgumentException();
 
-    HashMap<Character, Integer> hashmap = new HashMap<>();
+    Map<Character, Integer> hashmap = new HashMap<>();
 
-    int start = 0, end = 0;
-    int currLen = 0, LongestSub = 0;
-
-    for(end = 0; end < str.length(); end++) {
+    int LongestSub = 0;
+    int start = 0;
+    for(int end = 0; end < str.length(); end++) {
 
         char added = str.charAt(end);
         hashmap.put(added, hashmap.getOrDefault(added,0) +1);
@@ -34,7 +33,7 @@ class LongestSubstringKDistinct {
           start++;
         }
 
-        currLen = end - start + 1;
+        int currLen = end - start + 1;
         LongestSub = Math.max(LongestSub, currLen);
     }
 
@@ -43,10 +42,4 @@ class LongestSubstringKDistinct {
   Time Complexity: O(N)
   Space Complexity: O(K) where K is the number of distinct characters
   */
-
-  public static void main(String[] args) {
-    System.out.println("Length of the longest substring: " + LongestSubstringKDistinct.findLength("araaci", 2));
-    System.out.println("Length of the longest substring: " + LongestSubstringKDistinct.findLength("araaci", 1));
-    System.out.println("Length of the longest substring: " + LongestSubstringKDistinct.findLength("cbbebi", 3));
-  }
 }
