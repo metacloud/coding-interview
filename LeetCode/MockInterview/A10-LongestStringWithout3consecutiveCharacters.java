@@ -7,6 +7,10 @@ Given A, B, C, find any string of maximum length that can be created such that n
 
 Input: A = 1, B = 1, C = 6
 Output: "ccbccacc"
+
+https://leetcode.com/problems/reorganize-string
+https://leetcode.com/problems/distant-barcodes
+https://leetcode.com/problems/rearrange-string-k-distance-apart (premium)
 */
 
 class Solution {
