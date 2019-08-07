@@ -1,5 +1,5 @@
 /*
-Rearrange String K Distance Apart
+358. Rearrange String k Distance Apart
 
 Given a string and a number ‘K’, find if the string can be rearranged such that the same characters are at least ‘K’ distance apart from each other.
 */
