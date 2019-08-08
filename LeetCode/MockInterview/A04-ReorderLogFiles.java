@@ -32,4 +32,6 @@ class Solution {
 }/*
 Time Complexity: O(NlogN)
 Space Complexity: O(N)
+: Every time when we perform split operation on one of the Strings,
+  we're allocating new space for that string.
 */
