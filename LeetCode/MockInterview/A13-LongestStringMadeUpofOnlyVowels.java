@@ -10,20 +10,20 @@ NOTE: The answer may be 0, i.e. removing the entire string.
 
 class Solution {
     public int onlyVowels(String str){
-        char[] arr = str.toCharArray();
-        int start = 0;
-        int end = str.length()-1;
 
         Set<Character> set = new HashSet<>();
         set.add('a'); set.add('e'); set.add('i'); set.add('o'); set.add('u');
 
-        while(set.contains(arr[start])) start++;
-        while(set.contains(arr[end])) end--;
+        int start = 0;
+        while(set.contains(str.charAt(start))) start++;
 
-        int max = Integer.MIN_VALUE;
+        int end = str.length()-1;
+        while(set.contains(str.charAt(end))) end--;
+
+        int max = 0;
         for(int i=start; i<end+1; i++){
             int contiguousCnt = 0;
-            while(set.contains(arr[i])){
+            while(set.contains(str.charAt(i))){
                 contiguousCnt++;
                 i++;
             }
@@ -31,4 +31,7 @@ class Solution {
         }
         return start+(str.length()-1-end)+max;
     }
-}
+}/*
+Time Complexity: O(N)
+Space Complexity: O(5) ~= O(1)
+*/
