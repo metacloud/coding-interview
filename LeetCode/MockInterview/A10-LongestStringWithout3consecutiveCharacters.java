@@ -38,7 +38,9 @@ class Solution {
             }
         });
 
-        pq.offer(nodeA); pq.offer(nodeB); pq.offer(nodeC);
+        if(nodeA.cnt > 0) pq.offer(nodeA);
+        if(nodeB.cnt > 0) pq.offer(nodeB);
+        if(nodeC.cnt > 0) pq.offer(nodeC);
 
         StringBuilder sb = new StringBuilder();
         Queue<Node> queue = new LinkedList<>();
