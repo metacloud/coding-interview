@@ -11,38 +11,42 @@ class Solution {
             this.cnt = cnt;
         }
     }
-              
-    public String reorganizeString(String str) {
-        if(str.length()==0 || str==null) return "";
 
-        //all characters -> hashmap <character, frequency>
-        Map<Character, Integer> map = new HashMap<>();
-        for (char chr : str.toCharArray()) map.put(chr, map.getOrDefault(chr, 0) + 1);
+    public String reorganizeString(String S) {
+        if(S==null || S.length()==0) return "";
 
-        //maxHeap to sort by frequency
-        PriorityQueue<charCnt> maxHeap = new PriorityQueue<charCnt>((a, b) -> b.cnt - a.cnt);
+        // Check all the characters frequncy
+        int[] count = new int[26];
+        for(char ch : S.toCharArray()) count[ch-'a']++;
 
-        // add all characters to the maxHeap
-        for(char ch : map.keySet()) maxHeap.offer(new charCnt(ch, map.get(ch)));
+        PriorityQueue<charCnt> pq = new PriorityQueue<>(new Comparator<charCnt>(){
+           @Override
+            public int compare(charCnt a, charCnt b){
+                return (b.cnt-a.cnt!=0 ? b.cnt-a.cnt : a.ch-b.ch);
+            }
+        });
+
+        //add all the chars in S to PriorityQueue
+        for(int i=0; i<count.length; i++){
+            if(count[i]>0) pq.offer(new charCnt((char)(i+'a'),count[i]));
+        }
+
 
         StringBuilder sb = new StringBuilder();
-        while (!maxHeap.isEmpty()) {
-          charCnt curr = maxHeap.poll();
-          if(sb.length() ==0 || sb.charAt(sb.length()-1) != curr.ch){ // we can add
-              sb.append(curr.ch);
-              if(--curr.cnt > 0) maxHeap.offer(curr); //--curr.cnt : 반영됨?
-          } 
-          else { //we need to get another char to prevent consecutive sequence, a a(curr) b(next)
-              if(maxHeap.isEmpty()) return "";
-                  
-              charCnt next = maxHeap.poll();
-              sb.append(next.ch);
-              if(--next.cnt > 0) maxHeap.offer(next);
-              sb.append(curr.ch);
-              if(--curr.cnt > 0) maxHeap.offer(curr);
-          }  
-        }  
-        return sb.toString();
-  }    
+        Queue<charCnt> queue = new LinkedList<>();
+        while(!pq.isEmpty()){
+            charCnt curr = pq.poll();
+            sb.append(curr.ch);
+            curr.cnt--;
+            queue.offer(curr);
 
+            if(queue.size()==2){ //k==2 in this problem
+                charCnt temp = queue.poll();
+                if(temp.cnt>0){
+                    pq.offer(temp);
+                }
+            }
+        }
+        return sb.toString().length()==S.length() ? sb.toString() : "";
+    }
 }
