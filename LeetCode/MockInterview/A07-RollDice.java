@@ -10,17 +10,17 @@ Explanation: You can pick the first two dice and rotate each of them in one move
 
 class Solution {
     public int RollDice(int[] arr) {
-        if(pips.length==0) return 0;
+        if(arr.length==0) return 0;
 
         int min = Integer.MAX_VALUE;
-        for(int i=1; i<7; i++){ //dice face 1-6 available
+        for(int pip=1; pip<7; pip++){ //dice face 1-6 available
             int move = 0;
-            for(num : arr){
-                if(num == i) continue;
-                else if(num+i==7) move +=2;
-                else move++;
+            for(int num : arr){
+                if(num == pip) continue;
+                else if(num + pip==7) move+=2;
+                else move+=1;
             }
-            min = Math.max(min, move);
+            min = Math.min(min, move);
         }
         return min;
     }
