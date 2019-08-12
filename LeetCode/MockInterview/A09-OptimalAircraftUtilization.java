@@ -7,50 +7,44 @@ Your task is to write an algorithm to optimize the sets of forward/return shippi
 */
 
 class Solution {
-    public List<List<Integer>> optimalRoute(int maxTravelDist, List<List<Integer>> forwardRouteList, List<List<Integer>> returnRouteList){
-        List<List<Integer>> ret = new ArrayList<>();
+    public static List<List<Integer>> aircraftUtilization(int maxTravelDist, int[][] forwardRouteList, int[][] returnRouteList){
+        if(maxTravelDist==0 || forwardRouteList==null || forwardRouteList.length==0 || returnRouteList==null || returnRouteList.length==0) return null;
 
-        //sort two Lists
-        Collections.sort(forwardRouteList, new Comparator<List<Integer>>(){
+        Arrays.sort(forwardRouteList, new Comparator<int[]>(){
             @Override
-            public int compare(List<Integer> a, List<Integer> b){
-                return a.get(1)-b.get(1);
-            }
+            public int compare(int[] a, int[] b){ return a[1]-b[1]; }
         });
 
-        Collections.sort(returnRouteList, new Comparator<List<Integer>>(){
+        Arrays.sort(returnRouteList, new Comparator<int[]>(){
             @Override
-            public int compare(List<Integer> a, List<Integer> b){
-                return a.get(1)-b.get(1);
-            }
+            public int compare(int[] a, int[] b){ return a[1]-b[1]; }
         });
 
-        List<Integer> path = new ArrayList<>();
-        int i = 0, j = returnRouteList.size()-1;
-        int max = 0;
-        while(i < forwardRouteList.size() && j >= 0){
-            int curr = forwardRouteList.get(i).get(1) + returnRouteList.get(j).get(1);
+        int left = 0, right = returnRouteList.length-1;
+        int max = Integer.MIN_VALUE;
+        Map<Integer, List<List<Integer>>> map = new HashMap<>();
 
-            if(curr == maxTravelDist){
-                max = curr;
-                ret.add(new ArrayList<>(Arrays.asList(forwardRouteList.get(i).get(0), returnRouteList.get(j).get(0))));
-                i++;
+        while(left<forwardRouteList.length && right>=0){
+            int sum = forwardRouteList[left][1] + returnRouteList[right][1];
+
+            if(sum > maxTravelDist){
+                right--;
             }
-            else if(curr < maxTravelDist){
-                if(curr > max){
-                    max = curr;
-                    path.clear();
-                    path.add(forwardRouteList.get(i).get(0));
-                    path.add(returnRouteList.get(j).get(0));
+            else if(sum <= maxTravelDist){
+                if(sum >= max){
+                    max = sum;
+                    map.putIfAbsent(sum, new ArrayList<>());
+                    int duplicateCheck = right;
+                    while(duplicateCheck >=0 && returnRouteList[duplicateCheck][1]==returnRouteList[right][1]){
+                        List<Integer> pair = new ArrayList<>();
+                        pair.add(forwardRouteList[left][0]); pair.add(returnRouteList[duplicateCheck][0]);
+                        map.get(sum).add(pair);
+                        duplicateCheck--;
+                    }
                 }
-                i++;
-            }
-            else { // curr > maxTravelDist
-                j--;
+                left++;
             }
         }
-        if(ret.size()==0) ret.add(new ArrayList<>(path));
-
-        return ret;
+        return map.get(max);
     }
 }
