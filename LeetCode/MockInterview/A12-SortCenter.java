@@ -29,7 +29,7 @@ public int[] findTwoPackages(int truckSpace, List<Integer> packagesSpace){
 		hashmap.put(curr, i);
 	}
 	return new int[] {-1, -1}
-}
-
-
-
+}/*
+Time Complexity: O(N)
+Space Complexity: O(N)
+*/

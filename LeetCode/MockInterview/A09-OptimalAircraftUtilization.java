@@ -10,6 +10,7 @@ class Solution {
     public static List<List<Integer>> aircraftUtilization(int maxTravelDist, int[][] forwardRouteList, int[][] returnRouteList){
         if(maxTravelDist==0 || forwardRouteList==null || forwardRouteList.length==0 || returnRouteList==null || returnRouteList.length==0) return null;
 
+        //Arrays.sort(forwardRouteList, (int[] a, int[] b) -> (a[1] - b[1]));
         Arrays.sort(forwardRouteList, new Comparator<int[]>(){
             @Override
             public int compare(int[] a, int[] b){ return a[1]-b[1]; }
@@ -35,6 +36,7 @@ class Solution {
                     max = sum;
                     map.putIfAbsent(sum, new ArrayList<>());
                     int duplicateCheck = right;
+
                     while(duplicateCheck >=0 && returnRouteList[duplicateCheck][1]==returnRouteList[right][1]){
                         List<Integer> pair = new ArrayList<>();
                         pair.add(forwardRouteList[left][0]); pair.add(returnRouteList[duplicateCheck][0]);

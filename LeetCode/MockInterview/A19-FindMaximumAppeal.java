@@ -17,6 +17,7 @@ arr[i]+arr[j]+abs(i-j)  =  1. arr[i]+arr[j] +(i-j) = (arr[i]+i) + (arr[j]-j)
 
 class Solution {
     public int[] maxAppealPair(int[] arr){
+
         int max1=Integer.MIN_VALUE;
         int max2=Integer.MIN_VALUE;
         int ret1=-1, ret2=-1;

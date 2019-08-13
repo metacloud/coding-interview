@@ -22,7 +22,7 @@ public int[] findMaxTwoMovies(int[] movie_duration, int d){
 	int start=0, end=movies.length-1;
 	int m1=0, m2=0;
 
-	while(start < max){
+	while(start < end){
 		currDuration = movie_duration[start] + movie_duration[end];
 		if(currDuration == target){
 			return new int[] {movie_duration[start], movie_duration[end]};
@@ -44,11 +44,11 @@ public int[] findMaxTwoMovies(int[] movie_duration, int d){
 
 // LeetCode 1099
 class Solution {
-    public int twoSumLessThanK(int[] A, int K) { 
+    public int twoSumLessThanK(int[] A, int K) {
         Arrays.sort(A);
         int start=0, end=A.length-1;
         int max = Integer.MIN_VALUE;
-        
+
         while(start < end){
             int curr = A[start] + A[end];
             if(curr < K){
@@ -59,7 +59,6 @@ class Solution {
             }
         }
         if(max==Integer.MIN_VALUE) return -1;
-        
         return max;
     }
 }

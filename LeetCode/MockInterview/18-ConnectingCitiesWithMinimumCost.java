@@ -13,7 +13,7 @@ class Solution {
             }
         });
 
-        int sum=0, edge=0;
+        int sum=0, edgeCnt=0;
         for(int[] i : connections){
             int ua = find(unionFind, i[0]); //node1
             int ub = find(unionFind, i[1]); //node2
@@ -21,10 +21,10 @@ class Solution {
             if(ua != ub){
                 unionFind[ua] = ub;
                 sum+= i[2];
-                edge++;
+                edgeCnt++;
             }
         }
-        return edge == N-1 ? sum : -1;
+        return edgeCnt == N-1 ? sum : -1;
     }
 
     public int find(int[] uf, int find){

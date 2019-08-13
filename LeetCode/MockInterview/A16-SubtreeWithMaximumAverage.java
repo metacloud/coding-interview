@@ -11,6 +11,7 @@ The average value of a subtree is the sum of its values, divided by the number o
 class Solution {
     double max = Integer.MIN_VALUE;
     TreeNode ret = null;
+
     public TreeNode maximumAverageSubtree(TreeNode root) {
         if(root==null) return ret;
         dfsHelper(root);

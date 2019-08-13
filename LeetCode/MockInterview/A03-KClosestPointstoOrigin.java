@@ -6,27 +6,37 @@
 // 1. Using PriorityQueue, MaxHeap
 class Solution {
     public int[][] kClosest(int[][] points, int K) {
-        
+
         PriorityQueue<int[]> maxHeap = new PriorityQueue<>(
-            (a,b)-> (Integer.compare(b[0]*b[0]+b[1]*b[1], a[0]*a[0]+a[1]*a[1]))
-        );
-        
-        for(int i=0; i<K; i++){
-            maxHeap.add(points[i]);
+        (a,b)->((b[0]*b[0]+b[1]*b[1])-(a[0]*a[0]+a[1]*a[1])));
+
+        for(int[] point : points){
+            maxHeap.offer(point);
+            if(maxHeap.size()>K) maxHeap.poll();
         }
-        
-        for(int i=K; i < points.length; i++){
-            int[] max = maxHeap.peek();
-            int curr = points[i][0]*points[i][0] + points[i][1]*points[i][1];
-            if(max[0]*max[0]+max[1]*max[1] > curr){
-                maxHeap.poll();
-                maxHeap.add(points[i]);
-            }
-        }
-        
-        int[][] result = new int[K][];
+
+        int[][] result = new int[K][2];
         return maxHeap.toArray(result);
     }
-}
+}/*
+Time Complexity: O(NlogK)
+Space Complexity: The space complexity will be O(K) because we need to store ‘K’ point in the heap.
 
-// 2. Using Quick Sort
+*/
+
+
+// 2. Using Comparator
+class Solution {
+    public int[][] kClosest(int[][] points, int K) {
+        Arrays.sort(points, new Comparator<int[]>(){
+            @Override
+            public int compare(int[] a, int[] b){
+                return (a[0]*a[0]+a[1]*a[1]) - (b[0]*b[0]+b[1]*b[1]);
+            }
+        });
+        return Arrays.copyOfRange(points,0,K);
+    }
+}/*
+Time Complexity: O(NlogN)
+Space Complexity:
+*/

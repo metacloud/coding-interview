@@ -19,23 +19,26 @@ class Solution { // BFS - shortest path
 				if(grid[i][j]=='S'){
 					boolean[][] visited = new boolean[grid.length][grid[0].length];
 					int steps = bfsHelper(grid, i, j, visited);
-					minSteps = Math.min(minSteps, steps);
+                    if(steps != -1){ //when no Path ! Careful!
+                        minSteps = Math.min(minSteps, steps);
+                    }
 				}
 			}
 		}
+        if(minSteps==Integer.MAX_VALUE) return -1; //no path from S to E
 		return minSteps;
 	}
 
 	public static int bfsHelper(char[][] grid, int i, int j, boolean[][] visited){
-		if(i<0 || i>=grid.length || j<0 || j>=grid[0].length || grid[i][j] != 'S' && visited[i][j]==true) return -1;
+		//if(i<0 || i>=grid.length || j<0 || j>=grid[0].length || grid[i][j] != 'S' && visited[i][j]==true) return -1;
 
 		int step=0;
 
 		int[][] dirs = { {-1,0}, {1,0}, {0,-1}, {0,1} };
 		Queue<int[]> queue = new LinkedList<>();
 		queue.offer(new int[]{i, j});
-
 		visited[i][j] = true;
+
 		while(!queue.isEmpty()){
 			int size = queue.size();
 			for(int k=0; k<size; k++){
@@ -47,6 +50,7 @@ class Solution { // BFS - shortest path
 
 					if(nr>=0 && nr<grid.length && nc>=0 && nc<grid[0].length &&
 						grid[nr][nc]!='D' && visited[nr][nc]==false){
+
 						if(grid[nr][nc]=='E') return step+1;
 						queue.offer(new int[] {nr, nc});
 						visited[nr][nc]=true;
