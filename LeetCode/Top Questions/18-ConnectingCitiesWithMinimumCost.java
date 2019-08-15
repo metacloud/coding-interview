@@ -32,4 +32,4 @@ class Solution {
         uf[find] = find(uf, uf[find]);
         return uf[find];
     }
-}
+};
