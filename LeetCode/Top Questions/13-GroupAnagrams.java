@@ -1,3 +1,0 @@
-/*
-49. Group Anagrams
-*/
